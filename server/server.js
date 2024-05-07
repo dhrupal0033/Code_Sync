@@ -7,7 +7,13 @@ const ACTIONS = require("./utils/actions")
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors(
+	{
+		origin: ["https://code-sync-phi.vercel.app/"],
+		method: ["POST","GET","PUT","DELETE"],
+		credentials:true
+	}
+))
 
 const { Server } = require("socket.io")
 
